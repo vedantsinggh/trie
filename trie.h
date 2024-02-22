@@ -5,9 +5,13 @@
 
 class Node{
 public:
-    char* value;
+    char value;
+    Node *children[27];
 public:
     Node();
-    Node(char& val);
+    Node(char val);
+    void append(char val);
+    int size();
+    int sizeOfChildren();
     ~Node();
 };
