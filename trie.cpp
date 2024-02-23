@@ -2,6 +2,7 @@
 
 Node::Node(){
 	println("Root node created!");
+	value = '#';
 }
 
 Node::Node(char val){
@@ -14,9 +15,15 @@ Node::Node(char val){
 	}
 }
 
-void Node::append(char val){
-	Node* newNode = new Node(val);
-	children[((int)val - 65)] = newNode; 
+Node* Node::append(char val){
+	if(children[CON(val)]){
+		return children[CON(val)];
+	}
+	else {
+		Node* newNode = new Node(val);
+		children[CON(val)] = newNode; 
+		return newNode;
+	}
 }
 
 int Node::sizeOfChildren(){
@@ -32,7 +39,7 @@ Node::~Node(){
 		for (short i = 0; i < 27; i++)
 			if (children[i] != nullptr)
 				delete children[i];
-	
+				
 	print("Destroyed '");
 	print(value);
 	println("' Node!");
