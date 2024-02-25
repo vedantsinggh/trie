@@ -7,8 +7,6 @@ Node::Node(){
 
 Node::Node(char val){
 	value = val;
-	// print("Node created with value -> ");
-	// println(value);
 	for (short i = 0; i < 27; i++)
 	{
 		children[i] = nullptr;
@@ -74,8 +72,4 @@ Node::~Node(){
 		for (short i = 0; i < 27; i++)
 			if (children[i] != nullptr)
 				delete children[i];
-				
-	// print("Destroyed '");
-	// print(value);
-	// println("' Node!");
 }
