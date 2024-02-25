@@ -7,8 +7,7 @@ Node::Node(){
 
 Node::Node(char val){
 	value = val;
-	for (short i = 0; i < 27; i++)
-	{
+	for (short i = 0; i < 27; i++){
 		children[i] = nullptr;
 	}
 }
@@ -38,9 +37,9 @@ void Node::printTrie(){
 		{
 			if (children[i] != nullptr)
 			{
-				if (value != ROOT)
+				if (value != ROOT){
 					print(value);
-				
+				}
 				if (children[i]->value != END){
 					children[i]->printTrie();
 				}
@@ -55,9 +54,9 @@ void Node::printTrie(){
 void Node::printTrie(char val){
 	if (children[con(val)] != nullptr)
 	{
-		if (value != ROOT)
+		if (value != ROOT){
 			print(value);
-			
+		}
 		if (children[con(val)]->value != END){
 			children[con(val)]->printTrie();
 		}
@@ -68,8 +67,11 @@ void Node::printTrie(char val){
 }
 
 Node::~Node(){
-	if (children)
-		for (short i = 0; i < 27; i++)
-			if (children[i] != nullptr)
+	if (children){
+		for (short i = 0; i < 27; i++){
+			if (children[i] != nullptr){
 				delete children[i];
+			}
+		}
+	}
 }
