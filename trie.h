@@ -17,7 +17,8 @@ public:
 	Node* append(char val);
 	int size();
 	int sizeOfChildren();
-    void printTrie(char val);
     void printTrie();
+    void printTrie(char val);
+    void printTrie(char* val);
     ~Node();
 };

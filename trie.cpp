@@ -1,7 +1,6 @@
 #include "trie.h"
 
 Node::Node(){
-	println("Root node created!");
 	value = '#';
 }
 
@@ -51,7 +50,8 @@ void Node::printTrie(){
 	}
 }
 
-void Node::printTrie(char val){
+void Node::printTrie(char val)
+{	
 	if (children[con(val)] != nullptr)
 	{
 		if (value != ROOT){
@@ -65,6 +65,25 @@ void Node::printTrie(char val){
 		}
 	}
 }
+
+void Node::printTrie(char* val)
+{	
+	if (children[con(*val)] != nullptr)
+	{
+		if (value != ROOT){
+			print(value);
+		}
+		if (children[con(*val)]->value != END){
+			children[con(*val)]->printTrie(*(++val));
+		}
+		else {
+			println("");
+		}
+	}
+}
+
+
+
 
 Node::~Node(){
 	if (children){
