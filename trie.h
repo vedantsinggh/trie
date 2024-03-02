@@ -18,7 +18,7 @@ public:
 	int size();
 	int sizeOfChildren();
     void printTrie();
-    void printTrie(char val);
-    void printTrie(char* val);
+    void printTrie(const char val);
+    void printTrie(const char* val);
     ~Node();
 };

@@ -50,7 +50,7 @@ void Node::printTrie(){
 	}
 }
 
-void Node::printTrie(char val)
+void Node::printTrie(const char val)
 {	
 	if (children[con(val)] != nullptr)
 	{
@@ -66,7 +66,7 @@ void Node::printTrie(char val)
 	}
 }
 
-void Node::printTrie(char* val)
+void Node::printTrie(const char* val)
 {	
 	if (children[con(*val)] != nullptr)
 	{
